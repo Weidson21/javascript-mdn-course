@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition : 2 task</title>
+</head>
+<body>
+    <main>
+        <label for="numero01">Primeiro número: <input type="number" name="numero01" id="numero01"></label>
+        <select name="opcao" id="opcao">
+            <option value="#">--Escolha a operação!--</option>
+            <option value="adicao">+</option>
+            <option value="subtracao">-</option>
+            <option value="multiplicacao">*</option>
+            <option value="divisao">/</option>
+        </select>
+        <label for="numero02">Segundo número: <input type="number" name="numero02" id="numero02"></label>
+        <p id="resultado"></p>
+    </main>
+    <script>
+        let inputPrimeiroNumero = document.querySelector("#numero01");
+        let inputSegundoNumero = document.querySelector("#numero02");
+        let para = document.querySelector("#resultado");
+        let opcao = document.querySelector("#opcao");
+        let select = document.querySelector("select")
+
+        select.addEventListener("change", selecionar)
+
+        function selecionar() {
+            let opcao = select.value
+            let primeironumero = Number(inputPrimeiroNumero.value);
+            let segundonumero = Number(inputSegundoNumero.value);
+            switch (opcao){
+                case "adicao":
+                para.textContent = `A soma de ${primeironumero} + ${segundonumero} é igual a ${primeironumero + segundonumero}`
+                break;
+                case "subtracao": 
+                para.textContent = `A subtração de  ${primeironumero} - ${segundonumero} é igual a ${primeironumero - segundonumero}`
+                break;
+                case "multiplicacao": 
+                para.textContent = `A multiplicação de ${primeironumero} * ${segundonumero} é igual a ${primeironumero*segundonumero}`
+                break;
+                case "divisao": 
+                para.textContent = `A divisão de ${primeironumero} / ${segundonumero} é igual a ${primeironumero/segundonumero}`
+            }
+        }
+    </script>
+</body>
+</html>
