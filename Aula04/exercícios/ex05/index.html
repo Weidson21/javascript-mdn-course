@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+<body>
+    <label for="senha">Digite a senha: <input type="number" name="senha" id="senha"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de senha
+        
+        var valor = document.querySelector("#senha");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+
+            var senha = Number(valor.value);
+            if (valor.value === ""){
+                para.textContent = "Por favor, digite uma senha!"
+            } else if (senha == 1234){
+                para.textContent = "Acesso permitido!"
+            } else {
+                para.textContent = "Acesso negado!"
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex17</title>
+</head>
+<body>
+    <label for="num">Digite um número para selecionar seu produto: <input type="number" name="num" id="num"> <button>Pedir</button></label>
+    <p></p>
+    <script>
+        // Escolha de pedido
+
+        var valor = document.querySelector("#num");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            var numero = Number(valor.value);
+
+            switch(numero){
+                case 1: 
+                para.textContent = "Seu pedido é um refrigerante?";
+                break
+                case 2: 
+                para.textContent = "Seu pedido é um suco?";
+                break
+                case 3: 
+                para.textContent = "Seu pedido é uma água?";
+                break
+                default: 
+                para.textContent = "Não há esse pedido!";
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+<body>
+    <label for="semana">Dias da semana: <select name="semana" id="semana">
+        <option value="segunda">Segunda-feira</option>
+        <option value="terça">Terça-feira</option>
+        <option value="quarta">Quarta-feira</option>
+        <option value="quinta">Quinta-feira</option>
+        <option value="sexta">Sexta-feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+    </select></label>
+    <p></p>
+    <script>
+        // Verificando se é dia da semana ou final de semana
+
+        var select = document.querySelector("select");
+        var para = document.querySelector("p");
+
+        select.onchange = function(){
+            var opcao = select.value;
+            
+            switch(opcao){
+                case "segunda": 
+                para.textContent = "O dia de segunda é um dia de semana";
+                break;
+                case "terça": 
+                para.textContent = "O dia de terça-feira é um dia de semana";
+                break;
+                case "quarta": 
+                para.textContent = "O dia de quarta-feira é um dia de semana";
+                break;
+                case "quinta": 
+                para.textContent = "O dia de quinta-feira é um dia de semana";
+                break;
+                case "sexta": 
+                para.textContent = "O dia de sexta-feira é um dia de semana";
+                break;
+                case "sabado": 
+                para.textContent = "O dia de sábado é um final de semana";
+                break;
+                case "domingo": 
+                para.textContent = "O dia de domingo é um final de semana";
+            }
+        }
+    </script>
+</body>
+</html>

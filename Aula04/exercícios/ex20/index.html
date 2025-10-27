@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20</title>
+</head>
+<body>
+    <label for="senha">Senha: <input type="password" name="senha" id="senha"> </label>
+    <p></p>
+    <script>
+        // Senha forte ou senha fraca
+
+        const senha = document.querySelector("#senha");
+        const para = document.querySelector("p");
+
+        senha.oninput = function(){
+            const valor = senha.value;
+            let forca = 'Fraca';
+
+            const temNumero = /[0-9]/.test(valor);
+            const temLetra = /[a-zA-Z]/.test(valor);
+
+            if(valor.length < 6){
+                forca = "Fraca";
+                para.style.color = "red";
+            } else if(valor.length >= 6 &&(!temNumero || !temLetra)) {
+                forca = "Média";
+                para.style.color = "orange";
+            } else if (valor.length >= 6 && temNumero && temLetra) {
+                forca = "Forte";
+                para.style.color = "green";
+            }
+
+            para.textContent = `Força da senha ${forca}`;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+<body>
+    <label for="num1">Primeiro número: <input type="number" name="num1" id="num1"></label>
+    <label for="num2">Segundo número: <input type="number" name="num2" id="num2"></label>
+    <label for="num3">Terceiro número: <input type="number" name="num3" id="num3"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificando maior de três números
+
+        var valor1 = document.querySelector("#num1");
+        var valor2 = document.querySelector("#num2");
+        var valor3 = document.querySelector("#num3");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            var pn = Number(valor1.value);
+            var sn = Number(valor2.value);
+            var tn = Number(valor3.value);
+
+
+            if (valor1.value ==="" || valor2.value ==="" || valor3.value === ""){
+                para.textContent = "Preencha uma das lacunas!";
+            } else if(pn > sn && pn > tn){
+                para.textContent = `O número ${pn} é o maior`;
+            } else if(sn > pn && sn > tn){
+                para.textContent = `O número ${sn} é o maior`;
+            } else if(tn > pn && tn > sn){
+                para.textContent = `O número ${tn} é o maior`;
+            } else{
+                para.textContent = "Todos os valores são iguais";
+            }
+        }
+    </script>
+</body>
+</html>

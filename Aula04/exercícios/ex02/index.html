@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+<body>
+    <label for="idade">Digite sua idade: <input type="number" name="idade" id="idade"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de maior idade 
+
+        var valor = document.querySelector("#idade");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+
+            var idade = Number(valor.value);
+
+            if (valor.value === ""){
+                para.textContent = "Por favor, digite sua idade!";
+            } else if (idade >= 18){
+                para.textContent = "Você é maior de idade!";
+            } else {
+                para.textContent = "Você é menor de idade!";
+            }
+        }
+    </script>
+</body>
+</html>

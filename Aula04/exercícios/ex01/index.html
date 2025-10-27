@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+<body>
+    <label for="num">Digite um número: <input type="number" name="num" id="num"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador se o número é par ou ímpar
+
+        var valor = document.querySelector("#num");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var numero = Number(valor.value);
+
+            if (valor.value === ''){
+                para.textContent = "Por favor, digite um número!";
+            }else if (numero % 2 == 0){
+                para.textContent = `O número ${numero} é par!`;
+            } else {
+                para.textContent = `O número ${numero} é ímpar!`;
+            }
+        })
+    </script>
+</body>
+</html>

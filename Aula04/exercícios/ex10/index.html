@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+<body>
+    <div><label for="email">E-mail: <input type="email" name="email" id="email" placeholder="seu email"></label></div>
+    <div><label for="senha">Senha: <input type="password" name="senha" id="senha"></label></div>
+    <button>Login</button>
+    <p></p>
+    <script>
+        // Verificando login com email e senha
+
+        var valor1 = document.querySelector("#email");
+        var valor2 = document.querySelector("#senha");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var senha = Number(valor2.value);
+
+            if(valor1.value == "" || valor2 == ""){
+                para.textContent = "Login ou senha errado!";
+            } else if (valor1.value === "admin@gmail.com" && senha == 123) {
+                para.textContent = "Login bem sucedido!";
+            } else {
+                para.textContent = "Login ou senha errado!";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+</head>
+<body>
+    <div><label for="nota1">Primeira nota: <input type="number" name="nota1" id="nota1"></label></div>
+    <div><label for="nota2">Segunda nota: <input type="number" name="nota2" id="nota2"></label></div>
+    <div><label for="nota3">Terceira nota: <input type="number" name="nota3" id="nota3"></label></div>
+    <button>Verificar</button>
+    <p></p>
+    <script>
+        // Verificar de aprovação de aluno
+
+        var valor1 = document.querySelector("#nota1");
+        var valor2 = document.querySelector("#nota2");
+        var valor3 = document.querySelector("#nota3");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", clicar);
+
+        function clicar(){
+
+            var primeiraNota = Number(valor1.value);
+            var segundaNota = Number(valor2.value);
+            var terceiraNota = Number(valor3.value);
+
+            var media = (primeiraNota + segundaNota + terceiraNota) / 3 >= 6
+            ? para.textContent = "O aluno foi aprovado"
+            : para.textContent = "O aluno foi reprovado"
+        }
+    </script>
+</body>
+</html>

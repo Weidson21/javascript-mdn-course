@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    <label for="temperatura">Digite a temperatura em Celsius: <input type="number" name="temperatura" id="temperatura"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de temperatura ambiental
+
+        var valor = document.querySelector("#temperatura");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", clicar);
+
+        function clicar(){
+
+            var temperatura = Number(valor.value);
+            if (valor.value ===""){
+                para.textContent = "Por favor, digite a temperatura!";
+            } else if (temperatura > 29){
+                para.textContent = "A temperatura está quente!";
+            } else if (temperatura >=23 && temperatura <=29){
+                para.textContent = "A temperatura está agradável!";
+            } else if (temperatura > 0 && temperatura < 23){
+                para.textContent = "A temperatura está fria!";
+            } else {
+                para.textContent = "A temperatura está congelante!";
+            }
+        }
+    </script>
+</body>
+</html>

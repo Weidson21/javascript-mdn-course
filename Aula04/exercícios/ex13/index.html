@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+<body>
+    <h1>Verificação de desconto</h1>
+    <label for="compra">Valor da compra R$: <input type="number" name="compra" id="compra"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // verificação de desconto de compras
+
+        var valor = document.querySelector("#compra");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", clicar)
+
+        function clicar(){
+            var preco = Number(valor.value);
+
+            if(valor.value === ""){
+                para.textContent = "Por favor, digite o preço";
+            } else if (preco < 100){
+                para.textContent = `O preço total sai por R$${preco} reais.`
+            } else if (preco >= 100 && preco <=500){
+                para.textContent = `O preço total sai por R$${preco - preco*0.10}.
+                Produtos acima de 100 reais têm 10% de desconto.`
+            } else {
+            para.textContent = `O preço total sai por R$${preco - preco*0.20}. 
+            Produtos acima de 500 reais têm desconto de 20%`
+            }
+        }
+    </script>
+</body>
+</html>

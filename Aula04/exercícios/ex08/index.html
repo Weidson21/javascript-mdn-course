@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+</head>
+<body>
+    <label for="idade">Digite a idade: <input type="number" name="idade" id="idade"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificar de classificação de idade
+
+        var valor = document.querySelector("#idade");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var idade = Number(valor.value);
+
+            if(valor.value ===""){
+                para.textContent = "Por favor, digite a idade!";
+            } else if(idade < 12){
+                para.textContent = `A pessoa que tem ${idade} é uma criança!`;
+            } else if(idade >=12 && idade <=17){
+                para.textContent = `A pessoa que tem ${idade} é um adolescente!`;
+            } else if(idade >= 18 && idade <=59){
+                para.textContent = `A pessoa que tem ${idade} está na fase adulta!`
+            } else {
+                para.textContent = `A pessoa que tem ${idade} é idosa!`
+            }
+        })
+    </script>
+</body>
+</html>

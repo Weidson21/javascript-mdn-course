@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+</head>
+<body>
+    <label for="numero">Digite um número: <input type="number" name="numero" id="numero"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificar se o número é positivo, negativo ou zero
+
+        var valor = document.querySelector("#numero");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            var numero = Number(valor.value);
+
+            if(valor.value === ""){
+                para.textContent = "Por favor, digite um número!"
+            } else if(numero > 0){
+                para.textContent = `O número ${numero} é positivo!`
+            } else if(numero < 0){
+                para.textContent = `O número ${numero} é negativo!`
+            } else {
+                para.textContent = `O número ${numero} não é negativo e nem positivo. Portanto, é neutro!`
+            }
+        }
+    </script>
+</body>
+</html>

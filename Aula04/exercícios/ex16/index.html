@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+</head>
+<body>
+    <label for="num">Digite um número entre 10 e 50: <input type="number" name="num" id="num"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificar se o número está entre 10 e 50
+
+        var valor = document.querySelector("#num");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var numero = Number(valor.value);
+
+            if(valor.value === ""){
+                para.textContent = "Por favor, digite um número!"
+            } else if (numero >=10 && numero <=50){
+                para.textContent = "O número digitado está entre os números pedidos!";
+            } else {
+                para.textContent = "O número digitado não está entre os números pedidos!";
+            }
+        })
+    </script>
+</body>
+</html>

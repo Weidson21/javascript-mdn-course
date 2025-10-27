@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+<body>
+    <label for="dia">Digite um número para ver seu dia da semana: <input type="number" name="dia" id="dia"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificar do dia da semana 
+
+        var valor = document.querySelector("#dia");
+        var p = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+
+            var semana = Number(valor.value);
+
+            switch (semana){
+                case 1:
+                p.textContent = "Hoje é domingo";
+                break;
+                case 2: 
+                p.textContent = "Hoje é segunda-feira";
+                break;
+                case 3: 
+                p.textContent = "Hoje é terça-feira";
+                break;
+                case 4: 
+                p.textContent = "Hoje é quarta-feira";
+                break;
+                case 5: 
+                p.textContent = "Hoje é quinta-feira";
+                break;
+                case 6: 
+                p.textContent = "Hoje é sexta-feira";
+                break;
+                case 7: 
+                p.textContent = "Hoje é sábado";
+                break;
+                default:
+                p.textContent = "Não há esse dia da semana!"
+            }
+        }
+    </script>
+</body>
+</html>

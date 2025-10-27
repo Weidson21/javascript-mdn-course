@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18</title>
+</head>
+<body>
+    <label for="peso">Digite o peso: <input type="number" name="peso" id="peso"></label>
+    <label for="altura">Digite a altura em m: <input type="number" name="altura" id="altura"> <button>Calcular</button></label>
+    <div></div>
+    <p></p>
+    <script>
+        // Calculando IMC
+
+        var valor1 = document.querySelector("#peso");
+        var valor2 = document.querySelector("#altura");
+        var para = document.querySelector("p");
+        var div = document.querySelector("div");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var peso = Number(valor1.value);
+            var altura = Number(valor2.value);
+            var imc = peso/(altura*altura)
+
+            if(valor1.value === "" || valor2.value === ""){
+                para.textContent = "Por favor, complete as lacunas!"
+            } else if(imc < 18.5){
+                div.textContent = `IMC de ${imc.toFixed(2)}`;
+                para.textContent = "Abaixo do peso!";
+            } else if(imc >= 18.5 && imc <= 24.9){
+                div.textContent = `IMC de ${imc.toFixed(2)}`;
+                para.textContent = "Peso normal";
+            } else if(imc >= 25 && imc <=29.9){
+                div.textContent = `IMC de ${imc.toFixed(2)}`;
+                para.textContent = "Sobrepeso!";
+            } else {
+                div.textContent = `IMC de ${imc.toFixed(2)}`
+                para.textContent = "Obeso!"
+            }
+        })
+    </script>
+</body>
+</html>

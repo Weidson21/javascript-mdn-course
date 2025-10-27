@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex15</title>
+</head>
+<body>
+    <label for="letra">Digite uma letra: <input type="text" name="letra" id="letra"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de vogal/consoante
+
+        var input = document.querySelector("#letra");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            var valor = input.value.toString().toLowerCase();
+
+            if(input.value ===""){
+                para.textContent = "Por favor, digite uma letra";
+            } else if (valor === "a" || valor ==="e" || valor ==="i" || valor === "o" || valor ==="u"){
+                para.textContent = `A letra ${valor} é uma vogal`;
+            } else{
+                para.textContent = `A letra ${valor} é uma consoante!`;
+            }
+        }
+    </script>
+</body>
+</html>

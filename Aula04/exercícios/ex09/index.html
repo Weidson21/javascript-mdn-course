@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <style>
+        label, input{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div><label for="nota1">Primeira nota: <input type="number" name="nota1" id="nota1"></label></div>
+    <div><label for="nota2">Segunda nota: <input type="number" name="nota2" id="nota2"></label></div>
+    <div><label for="nota3">Terceira nota: <input type="number" name="nota3" id="nota3"></label></div>
+    <div><label for="nota4">Quarta nota: <input type="number" name="nota4" id="nota4"></label></div>
+    <div><label for="presença">Presença: <input type="number" name="presença" id="presença"></label></div>
+    <button>Verificar</button>
+    <p></p>
+    <script>
+        // Verificar se o aluno está aprovado ou reprovado
+
+        var valor1 = document.querySelector("#nota1");
+        var valor2 = document.querySelector("#nota2");
+        var valor3 = document.querySelector("#nota3");
+        var valor4 = document.querySelector("#nota4");
+        var valor5 = document.querySelector("#presença");
+        var para = document.querySelector("p")
+        var btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            var primeiraNota = Number(valor1.value);
+            var segundaNota = Number(valor2.value);
+            var terceiraNota = Number(valor3.value);
+            var quartaNota = Number(valor4.value);
+            var presenca = Number(valor5.value);
+            var media = (primeiraNota + segundaNota + terceiraNota + quartaNota) / 4
+
+            if(valor1.value === "" || valor2.value ==="" || valor3.value ==="" || valor4.value === "" || valor5.value === ""){
+                para.textContent = "Está faltando um valor. Por favor, digite!"
+            } else if(media >= 5 && presenca >= 75){
+                para.textContent = "Aluno aprovado!"
+            } else {
+                para.textContent = "Aluno reprovado!"
+            }
+        }
+    </script>
+</body>
+</html>

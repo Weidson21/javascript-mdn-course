@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+<body>
+    <label for="nota">Digite a nota: <input type="number" name="nota" id="nota"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de nota de A-D
+
+        var valor = document.querySelector("#nota");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var nota = Number(valor.value);
+
+            if(valor.value === ""){
+                para.textContent = "Por favor, digite um valor!"
+            } else if (nota >= 9 && nota <= 10){
+                para.textContent = "Nota A";
+            } else if (nota >= 7 && nota <=8){
+                para.textContent = "Nota B";
+            } else if (nota >= 5 && nota <= 6){
+                para.textContent = "Nota C";
+            } else {
+                para.textContent = "Nota D";
+            }
+        })
+    </script>
+</body>
+</html>

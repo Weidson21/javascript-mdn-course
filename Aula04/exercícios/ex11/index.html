@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+<body>
+    <h1>Verificação de triângulos</h1>
+    <label for="lado1">Primeiro lado do triângulo: <input type="number" name="lado1" id="lado1"></label>
+    <label for="lado2">Segundo lado do triângulo: <input type="number" name="lado2" id="lado2"></label>
+    <label for="lado3">Terceiro lado do triângulo: <input type="number" name="lado3" id="lado3"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificação da formação dos triângulos
+
+        var valor1 = document.querySelector("#lado1");
+        var valor2 = document.querySelector("#lado2");
+        var valor3 = document.querySelector("#lado3");
+        var para = document.querySelector("p");
+        var btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            var pl = Number(valor1.value);
+            var sl = Number(valor2.value);
+            var tl = Number(valor3.value);
+
+            if(valor1.value === "" || valor2.value === "" || valor3.value === "" ){
+                para.textContent = "Por favor, complete as três lacunas";
+            } else if (pl == sl && pl == tl && sl == tl){
+                para.textContent = "Esses valores formam um triângulo equilátero";
+            } else if (pl == sl && pl != tl || pl == tl && pl != sl || sl == tl && sl != pl){
+                para.textContent = "Esses valores formam um triângulo isósceles";
+            } else {
+                para.textContent = "Esses valores formam um triângulo escaleno"
+            }
+        })
+    </script>
+
+</body>
+</html>
